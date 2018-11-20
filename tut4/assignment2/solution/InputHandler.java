@@ -1,4 +1,4 @@
-package assignment2;
+package s_a2;
 
 import java.util.Scanner;
 
@@ -7,9 +7,11 @@ public class InputHandler {
 	private Scanner scanner;
 	private Game game;
 	
-	public InputHandler() {
+	public InputHandler()	 {
 		scanner = new Scanner(System.in);
 	}
+
+	//no Execption handling implemented here, NullPointerException can occur
 	
 	public void start() {
 		System.out.print("command: ");
@@ -19,13 +21,15 @@ public class InputHandler {
 			switch (s) {
 				case "new": newGame();
 					break;
-				case "team1 goal": //goal team 1
+				case "start": game.start();
 					break;
-				case "team2 goal": //goal team 2
+				case "team1 goal": game.goal1();
 					break;
-				case "halftime": //print halftime score here
+				case "team2 goal": game.goal2();
 					break;
-				case "game end": //end game here
+				case "halftime": game.halftime();
+					break;
+				case "game end": game.end(); game = null;
 					break;
 				default: System.out.println("No valid command");
 			}
@@ -39,18 +43,18 @@ public class InputHandler {
 	
 	private void newGame() {
 		
-		//add code here
-	
+		game = new Game();
+		
 		System.out.print("Team1: ");
 		String s = scanner.nextLine();
 		
-		// add code here
+		Team team = new Team(s);
+		game.setTeam1(team);
 		
 		System.out.print("Team2: ");
 		s = scanner.nextLine();
 		
-		// add code here
-		
+		game.setTeam2(new Team(s));
 	}
 
 }
