@@ -12,7 +12,7 @@ public class InputHandler {
 	}
 
 	//no Execption handling implemented here, NullPointerException can occur
-	
+
 	public void start() {
 		System.out.print("command: ");
 		String s = scanner.nextLine();
