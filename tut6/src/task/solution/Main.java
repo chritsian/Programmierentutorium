@@ -26,10 +26,7 @@ public class Main {
           list.addLast(3);
           list.addLast(5);
           
-          System.out.println(!list.isEmpty() + "\n");
-          
-          
-          
+          System.out.println(!list.isEmpty() + "\n"); 
           //toString test
           
           System.out.println("toString test:");

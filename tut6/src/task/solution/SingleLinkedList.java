@@ -109,7 +109,7 @@ public class SingleLinkedList {
             head = null;
         } else {
             ListElement l = head;
-            for (int j = 0; j < size() - 2; j++) {
+            for (int j = 0; j < size() - 2; j++) { 
                 l = l.getNext();
             }
             l.setNext(null);
