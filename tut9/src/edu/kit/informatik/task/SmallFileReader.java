@@ -34,7 +34,6 @@ public class SmallFileReader {
      * The array represents the lines of the file
      * 
      * @return file content
-     * @throws IOException 
      */
     public List<String> read() throws FileSizeException {
         
