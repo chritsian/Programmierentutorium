@@ -31,7 +31,7 @@ class SimpleMathTest {
     
     @Test
     void getTest() {
-        assertEquals(s.getX(), testX);
+        assertNotEquals(s.getX(), testX);
     }
 
 }

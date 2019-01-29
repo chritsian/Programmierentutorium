@@ -1,13 +1,27 @@
 package edu.kit.informatik.task.ui;
 
+import java.util.Arrays;
+
 import edu.kit.informatik.task.search.BinarySearch;
+import edu.kit.informatik.task.sort.InsertionSort;
 import edu.kit.informatik.task.sort.SelectionSort;
 import edu.kit.informatik.task.sort.SortAlgo;
 
+/**
+ * Provides a UserInterface to interact with sort and search algorithms.
+ * 
+ * @author christian
+ *
+ */
 public class UserInterface {
     
     private SortAlgo sort;
 
+    /**
+     * starts the UI
+     * 
+     * @param args run arguments
+     */
     public static void main(String[] args) {
         
            UserInterface ui = new UserInterface();
@@ -16,7 +30,7 @@ public class UserInterface {
     }
 
     private void start() {
-        sort = new SelectionSort();
+        sort = new InsertionSort();
         
         String s = Terminal.readLine();
         
@@ -38,8 +52,13 @@ public class UserInterface {
         }
     }
 
+    /**
+     * Syntax: search array number
+     * array Syntax: x,y,z,...
+     * 
+     */
     private void search(String[] input) {
-        if (!input[0].equals("sort")) {
+        if (!input[0].equals("search")) {
             Terminal.printError("No valid command.");
             return;
         }
@@ -59,6 +78,11 @@ public class UserInterface {
         
     }
 
+    /**
+     * Syntax: sortDesc x,y,z,....
+     *         sortAsc x,y,z,....
+     *
+     */
     private void sort(String[] input) {
         int[] arg;
         try {
@@ -70,11 +94,11 @@ public class UserInterface {
         
         switch(input[0]) {
         case "sortAsc":
-            Terminal.printLine(sort.sortAsc(arg));
-        break;
+            Terminal.printLine(Arrays.toString(sort.sortAsc(arg)));
+            break;
         
         case "sortDesc":
-            Terminal.printLine(sort.sortDesc(arg));
+            Terminal.printLine(Arrays.toString(sort.sortDesc(arg)));
          break;
          
         default:
