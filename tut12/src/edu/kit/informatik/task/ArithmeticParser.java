@@ -1,5 +1,6 @@
 package edu.kit.informatik.task;
 
+
 public class ArithmeticParser {
 
     private String input;
@@ -7,14 +8,12 @@ public class ArithmeticParser {
     public ArithmeticParser() {
         
     }
-    
-    public ArithmeticParser(String input) {
-        this.input = input;
-    }
+
     
     public void setString(String input) {
         this.input = input;
     }
+    
     
     public boolean checkBrackets() {
         int count = 0;
@@ -35,6 +34,7 @@ public class ArithmeticParser {
         
         return true;
     }
+    
     
     public int parseArithmetic() throws ParseException {
         

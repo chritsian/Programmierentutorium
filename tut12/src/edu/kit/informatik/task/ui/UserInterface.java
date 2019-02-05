@@ -55,7 +55,6 @@ public class UserInterface {
         
             case "calculate": 
                 try {
-                    arithmeticParser.setString(input[1]);
                     Terminal.printLine(arithmeticParser.parseArithmetic());
                 } catch (ParseException p) {
                     Terminal.printError(p.getMessage());
